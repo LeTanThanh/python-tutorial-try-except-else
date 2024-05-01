@@ -31,14 +31,36 @@ if __name__ == "__main__":
 
     return "underweight"
 
-  try:
-    height = float(input("Enter your height (meters): "))
-    weight = float(input("Enter your weight (kilograms): "))
-  except ValueError as error:
-    print(error)
-  else:
-    bmi = round(calculate_bmi(height, weight), 1)
-    evaluation = evaluate_bmi(bmi)
+  # try:
+  #   height = float(input("Enter your height (meters): "))
+  #   weight = float(input("Enter your weight (kilograms): "))
+  # except ValueError as error:
+  #   print(error)
+  # else:
+  #   bmi = round(calculate_bmi(height, weight), 1)
+  #   evaluation = evaluate_bmi(bmi)
 
-    print(f"Your body mass index is {bmi}")
-    print(f"This is considered {evaluation}")
+  #   print(f"Your body mass index is {bmi}")
+  #   print(f"This is considered {evaluation}")
+
+  # Using Python try…except…else and finally example
+
+  fruits = {
+    "apple": 10,
+    "orange": 20,
+    "banana": 30
+  }
+
+  key = None
+  while True:
+    try:
+      key = input("Enter a key to lookup: ")
+      fruit = fruits[key.lower()]
+    except KeyError:
+      print(f"Error! {key} does not exist.")
+    except KeyboardInterrupt:
+      break
+    else:
+      print(fruit)
+    finally:
+      print("Press Ctrl-C to exit.")
